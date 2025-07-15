@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Forecast History</title>
+</head>
+<body>
+    <h2>Forecast History</h2>
+    <table border="1">
+        <tr>
+            <th>Date</th>
+            <th>Prediction</th>
+            <th>Accuracy</th>
+        </tr>
+        {% for record in history %}
+        <tr>
+            <td>{{ record.date }}</td>
+            <td>{{ record.prediction }}</td>
+            <td>{{ record.accuracy }}%</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Inventory Report</title>
+</head>
+<body>
+    <h2>Inventory Report</h2>
+    <table border="1">
+        <tr>
+            <th>Item Name</th>
+            <th>Quantity</th>
+            <th>Location</th>
+            <th>Last Updated</th>
+        </tr>
+        {% for item in report %}
+        <tr>
+            <td>{{ item.name }}</td>
+            <td>{{ item.quantity }}</td>
+            <td>{{ item.location }}</td>
+            <td>{{ item.updated_at }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <a href="{% url 'inventory-list' %}">Back to Inventory</a>
+</body>
+</html>

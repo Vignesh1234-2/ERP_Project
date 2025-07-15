@@ -1,11 +1,10 @@
-inventory = []
+from django.db import models
 
-@app.route('/api/inventory', methods=['GET'])
-def get_inventory():
-    return jsonify(inventory)
+class Inventory(models.Model):
+    product_name = models.CharField(max_length=100)
+    category = models.CharField(max_length=100)
+    stock_qty = models.IntegerField()
+    reorder_level = models.IntegerField()
 
-@app.route('/api/inventory/add', methods=['POST'])
-def add_inventory():
-    data = request.json
-    inventory.append(data)
-    return jsonify({"message": "Inventory item added"})
+    def _str_(self):
+        return self.product_name

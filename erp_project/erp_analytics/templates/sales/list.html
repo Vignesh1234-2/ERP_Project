@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sales List</title>
+</head>
+<body>
+    <h2>Sales List</h2>
+    <table border="1">
+        <tr>
+            <th>Customer</th>
+            <th>Product</th>
+            <th>Quantity</th>
+            <th>Total Amount</th>
+            <th>Date</th>
+            <th>Actions</th>
+        </tr>
+        {% for sale in sales %}
+        <tr>
+            <td>{{ sale.customer }}</td>
+            <td>{{ sale.product }}</td>
+            <td>{{ sale.quantity }}</td>
+            <td>{{ sale.total_amount }}</td>
+            <td>{{ sale.date }}</td>
+            <td>
+                <a href="{% url 'sales-detail' sale.id %}">View</a>
+                <a href="{% url 'sales-edit' sale.id %}">Edit</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="{% url 'sales-create' %}">Create New Sale</a>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Employee Performance</title>
+</head>
+<body>
+    <h2>Performance Report</h2>
+    <table border="1">
+        <tr>
+            <th>Employee</th>
+            <th>Rating</th>
+            <th>Review Date</th>
+            <th>Comments</th>
+        </tr>
+        {% for record in performance %}
+        <tr>
+            <td>{{ record.employee.name }}</td>
+            <td>{{ record.rating }}</td>
+            <td>{{ record.review_date }}</td>
+            <td>{{ record.comments }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="{% url 'employee-list' %}">Back to Employees</a>
+</body>
+</html>

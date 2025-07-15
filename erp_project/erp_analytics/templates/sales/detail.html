@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sale Details</title>
+</head>
+<body>
+    <h2>Sale Details</h2>
+    <p><strong>Customer:</strong> {{ sale.customer }}</p>
+    <p><strong>Product:</strong> {{ sale.product }}</p>
+    <p><strong>Quantity:</strong> {{ sale.quantity }}</p>
+    <p><strong>Total Amount:</strong> {{ sale.total_amount }}</p>
+    <p><strong>Date:</strong> {{ sale.date }}</p>
+
+    <a href="{% url 'sales-edit' sale.id %}">Edit</a>
+    <a href="{% url 'sales-list' %}">Back to Sales</a>
+</body>
+</html>

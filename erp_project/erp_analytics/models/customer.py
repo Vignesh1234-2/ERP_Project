@@ -1,11 +1,10 @@
-customers = []
+from django.db import models
 
-@app.route('/api/customers', methods=['GET'])
-def get_customers():
-    return jsonify(customers)
+class Customer(models.Model):
+    name = models.CharField(max_length=100)
+    email = models.EmailField()
+    segment = models.CharField(max_length=50)
+    last_purchase = models.DateField()
 
-@app.route('/api/customers', methods=['POST'])
-def add_customer():
-    data = request.json
-    customers.append(data)
-    return jsonify({"message": "Customer added"})
+    def _str_(self):
+        return self.name

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Inventory Detail</title>
+</head>
+<body>
+    <h2>Inventory Item Details</h2>
+    <p><strong>Name:</strong> {{ item.name }}</p>
+    <p><strong>Quantity:</strong> {{ item.quantity }}</p>
+    <p><strong>Location:</strong> {{ item.location }}</p>
+    <a href="{% url 'inventory-edit' item.id %}">Edit</a> |
+    <a href="{% url 'inventory-list' %}">Back to List</a>
+</body>
+</html>

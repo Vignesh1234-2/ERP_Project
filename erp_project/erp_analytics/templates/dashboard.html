@@ -1,0 +1,37 @@
+{% extends "erp_analytics/base.html" %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+<h2>Welcome to ERP Dashboard</h2>
+
+<div>
+    <h3>Quick Stats</h3>
+    <ul>
+        <li>Total Sales: {{ total_sales }}</li>
+        <li>Active Customers: {{ active_customers }}</li>
+        <li>Low Stock Items: {{ low_stock_count }}</li>
+    </ul>
+</div>
+
+<div>
+    <h3>Recent Sales</h3>
+    <table border="1">
+        <tr>
+            <th>Customer</th>
+            <th>Product</th>
+            <th>Amount</th>
+            <th>Date</th>
+        </tr>
+        {% for sale in recent_sales %}
+        <tr>
+            <td>{{ sale.customer }}</td>
+            <td>{{ sale.product }}</td>
+            <td>{{ sale.total_amount }}</td>
+            <td>{{ sale.date }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+
+{% endblock %}

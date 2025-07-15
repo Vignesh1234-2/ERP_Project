@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}ERP Dashboard{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'erp_analytics/css/style.css' %}">
+</head>
+<body>
+    <header>
+        <h1>ERP Analytics</h1>
+        <nav>
+            <a href="{% url 'dashboard' %}">Dashboard</a> |
+            <a href="{% url 'sales-list' %}">Sales</a> |
+            <a href="{% url 'inventory-list' %}">Inventory</a> |
+            <a href="{% url 'supplier-list' %}">Suppliers</a> |
+            <a href="{% url 'customer-list' %}">Customers</a>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}
+        <!-- Page specific content will be injected here -->
+        {% endblock %}
+    </main>
+
+    <footer>
+        <p>© 2025 ERP Analytics Dashboard</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Suppliers List</title>
+</head>
+<body>
+    <h2>Suppliers List</h2>
+    <table border="1">
+        <tr>
+            <th>Name</th>
+            <th>Contact</th>
+            <th>Email</th>
+            <th>Address</th>
+            <th>Actions</th>
+        </tr>
+        {% for supplier in suppliers %}
+        <tr>
+            <td>{{ supplier.name }}</td>
+            <td>{{ supplier.contact }}</td>
+            <td>{{ supplier.email }}</td>
+            <td>{{ supplier.address }}</td>
+            <td>
+                <a href="{% url 'supplier-edit' supplier.id %}">Edit</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="{% url 'supplier-create' %}">Create New Supplier</a>
+</body>
+</html>

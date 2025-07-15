@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Run Forecast</title>
+</head>
+<body>
+    <h2>Run New Forecast</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Run</button>
+    </form>
+    <a href="{% url 'forecast-overview' %}">Back to Overview</a>
+</body>
+</html>

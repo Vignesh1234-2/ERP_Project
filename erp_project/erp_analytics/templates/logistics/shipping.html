@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Shipping Details</title>
+</head>
+<body>
+    <h2>Shipping Details</h2>
+    <p><strong>Order ID:</strong> {{ shipping.order_id }}</p>
+    <p><strong>Destination:</strong> {{ shipping.destination }}</p>
+    <p><strong>Status:</strong> {{ shipping.status }}</p>
+    <a href="{% url 'logistics-track' %}">Track Shipment</a>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Inventory List</title>
+</head>
+<body>
+    <h2>Inventory List</h2>
+    <table border="1">
+        <tr>
+            <th>Name</th>
+            <th>Quantity</th>
+            <th>Location</th>
+            <th>Actions</th>
+        </tr>
+        {% for item in items %}
+        <tr>
+            <td>{{ item.name }}</td>
+            <td>{{ item.quantity }}</td>
+            <td>{{ item.location }}</td>
+            <td>
+                <a href="{% url 'inventory-detail' item.id %}">View</a> |
+                <a href="{% url 'inventory-edit' item.id %}">Edit</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="{% url 'inventory-create' %}">Add New Item</a>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Track Shipment</title>
+</head>
+<body>
+    <h2>Track Shipment</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Track</button>
+    </form>
+    {% if shipment %}
+        <p><strong>Status:</strong> {{ shipment.status }}</p>
+        <p><strong>Current Location:</strong> {{ shipment.current_location }}</p>
+    {% endif %}
+    <a href="{% url 'logistics-vehicles' %}">View Vehicles</a>
+</body>
+</html>

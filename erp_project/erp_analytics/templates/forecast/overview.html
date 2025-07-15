@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Forecast Overview</title>
+</head>
+<body>
+    <h2>Forecast Overview</h2>
+    <p>Total Records: {{ total_records }}</p>
+    <p>Average Accuracy: {{ average_accuracy }}%</p>
+    <a href="{% url 'forecast-run' %}">Run New Forecast</a>
+    <a href="{% url 'forecast-history' %}">View History</a>
+</body>
+</html>

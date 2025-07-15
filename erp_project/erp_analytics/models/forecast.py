@@ -1,5 +1,9 @@
-import random
-@app.route('/api/forecast/run', methods=['POST'])
-def forecast():
-    predicted_revenue = random.randint(10000, 50000)
-    return jsonify({"predicted_revenue": predicted_revenue})
+from django.db import models
+
+class Forecast(models.Model):
+    month = models.CharField(max_length=20)
+    predicted_revenue = models.DecimalField(max_digits=15, decimal_places=2)
+    actual_revenue = models.DecimalField(max_digits=15, decimal_places=2)
+
+    def _str_(self):
+        return self.month

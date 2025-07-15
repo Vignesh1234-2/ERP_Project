@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Finance Transactions</title>
+</head>
+<body>
+    <h2>All Transactions</h2>
+    <a href="{% url 'finance-invoice' %}">Create Invoice</a>
+    <table border="1">
+        <tr>
+            <th>Transaction Type</th>
+            <th>Amount</th>
+            <th>Date</th>
+            <th>Description</th>
+        </tr>
+        {% for txn in transactions %}
+        <tr>
+            <td>{{ txn.transaction_type }}</td>
+            <td>{{ txn.amount }}</td>
+            <td>{{ txn.date }}</td>
+            <td>{{ txn.description }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

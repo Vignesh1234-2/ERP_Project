@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vehicles</title>
+</head>
+<body>
+    <h2>Vehicles List</h2>
+    <table border="1">
+        <tr>
+            <th>Vehicle ID</th>
+            <th>Driver</th>
+            <th>Status</th>
+        </tr>
+        {% for vehicle in vehicles %}
+        <tr>
+            <td>{{ vehicle.vehicle_id }}</td>
+            <td>{{ vehicle.driver }}</td>
+            <td>{{ vehicle.status }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
